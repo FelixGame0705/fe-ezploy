@@ -1,5 +1,7 @@
 import { getTranslations, type Locale } from "@/lib/i18n";
-import { ComingSoon } from "@/components/ComingSoon";
+import { HeroSection, ImageShowcase } from "@/components/common";
+import { ComingSoon } from "@/components/ui";
+import { InfoCard } from "@/components/ui";
 import Image from "next/image";
 import { Gift, Zap, CheckCircle2, CreditCard, MessageCircle, ShoppingCart, Cloud, Server, Wrench, Users, Bot, Code, Sparkles } from "lucide-react";
 
@@ -18,31 +20,15 @@ export default async function WebsitePage({
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1920&q=80')] bg-cover bg-center opacity-5 dark:opacity-10"></div>
       
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Hero Section */}
-        <div className="text-center">
-          <ComingSoon locale={validLocale} />
-          <div className="mt-8 flex justify-center">
-            <div className="relative h-48 w-full max-w-3xl overflow-hidden rounded-2xl shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80"
-                alt="Website Services"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/70 to-teal-600/70"></div>
-              <div className="relative z-10 flex h-full items-center justify-center">
-                <div>
-                  <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                    {t.website.title}
-                  </h1>
-                  <p className="mt-4 text-lg text-white/90 sm:text-xl">
-                    {t.website.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroSection
+          locale={validLocale}
+          title={t.website.title}
+          subtitle={t.website.description}
+          imageSrc="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80"
+          imageAlt="Website Services"
+          gradientFrom="from-emerald-600/70"
+          gradientTo="to-teal-600/70"
+        />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
           {/* Free Website Section */}
@@ -259,32 +245,24 @@ export default async function WebsitePage({
           </div>
         </div>
 
-        {/* Website Showcase Images */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          <div className="relative h-48 overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80"
-              alt="Website Design"
-              fill
-              className="object-cover transition-transform hover:scale-110"
-            />
-          </div>
-          <div className="relative h-48 overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80"
-              alt="E-commerce"
-              fill
-              className="object-cover transition-transform hover:scale-110"
-            />
-          </div>
-          <div className="relative h-48 overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80"
-              alt="Business Website"
-              fill
-              className="object-cover transition-transform hover:scale-110"
-            />
-          </div>
+        <div className="mt-16">
+          <ImageShowcase
+            images={[
+              {
+                src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80",
+                alt: "Website Design",
+              },
+              {
+                src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80",
+                alt: "E-commerce",
+              },
+              {
+                src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
+                alt: "Business Website",
+              },
+            ]}
+            columns={3}
+          />
         </div>
 
         <div className="mt-12 text-center">

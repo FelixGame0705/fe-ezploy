@@ -1,5 +1,4 @@
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
+import { Navigation, Footer } from "@/components/layout";
 import { locales, type Locale } from "@/lib/i18n";
 
 export function generateStaticParams() {
