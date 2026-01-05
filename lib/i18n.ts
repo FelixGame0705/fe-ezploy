@@ -20,7 +20,7 @@ export const translations = {
     },
     deploy: {
       title: 'Deploy',
-      description: 'Deploy ứng dụng & website tự động với chi phí rẻ, tương tự Railway / Render',
+      description: 'Deploy ứng dụng & website tự động với chi phí rẻ, uptime 99.9%',
       additionalInfo: 'Hạ tầng chúng tôi hiện chỉ đang sử dụng cho gói dịch vụ website và sẽ ra mắt cho các cá nhân, freelancer có nhu cầu deploy website dễ dàng, uptime 99.9% và autoscale',
       pricing: {
         title: 'Các gói dịch vụ',
@@ -141,7 +141,7 @@ export const translations = {
     },
     deploy: {
       title: 'Deploy',
-      description: 'Deploy applications & websites automatically with low cost, similar to Railway / Render',
+      description: 'Deploy applications & websites automatically with low cost, uptime 99.9%',
       additionalInfo: 'Our infrastructure is currently only used for website service packages and will be launched for individuals and freelancers who need easy website deployment, 99.9% uptime and autoscale',
       pricing: {
         title: 'Service Plans',
